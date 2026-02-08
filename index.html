@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VITA-SOH — Deterministic Battery SOH & EU Passport Compliance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="VITA-SOH provides deterministic, audit-ready battery State-of-Health measurement and EU Battery Digital Product Passport compliance infrastructure." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="VITA-SOH — Battery SOH & EU Digital Product Passport" />
+  <meta property="og:description" content="Deterministic, offline, audit-ready battery SOH measurement and EU Battery Passport compliance." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    /* ---------- THEME VARIABLES ---------- */
+    :root {
+      --bg: #fafafa;
+      --text: #1a1a1a;
+      --muted: #444;
+      --pill-bg: #e0e0e0;
+      --border: #ddd;
+      --cta-bg: #111;
+      --cta-text: #fff;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0f0f0f;
+      --text: #f2f2f2;
+      --muted: #aaa;
+      --pill-bg: #2a2a2a;
+      --border: #333;
+      --cta-bg: #fff;
+      --cta-text: #000;
+    }
+
+    /* ---------- BASE ---------- */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      position: relative;
+    }
+
+    h1, h2 {
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+    }
+
+    h2 {
+      margin-top: 60px;
+      font-size: 1.6rem;
+    }
+
+    p {
+      max-width: 700px;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* ---------- UI ELEMENTS ---------- */
+    .pills {
+      margin-top: 20px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: var(--pill-bg);
+      font-size: 0.85rem;
+      margin-right: 8px;
+    }
+
+    .intro {
+      margin-top: 30px;
+    }
+
+    .cta {
+      margin-top: 30px;
+    }
+
+    .cta a {
+      display: inline-block;
+      padding: 12px 20px;
+      background: var(--cta-bg);
+      color: var(--cta-text);
+      text-decoration: none;
+      border-radius: 6px;
+      margin-right: 12px;
+      transition: opacity 0.15s ease;
+    }
+
+    .cta a:hover {
+      opacity: 0.85;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    /* ---------- THEME TOGGLE ---------- */
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 12px;
+      cursor: pointer;
+      color: var(--text);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+
+    <h1>VITA-SOH</h1>
+    <div class="tagline">
+      Deterministic Battery SOH Measurement & EU Digital Product Passport Compliance
+    </div>
+
+    <div class="pills">
+      <span class="pill">Offline</span>
+      <span class="pill">Audit-Ready</span>
+      <span class="pill">Deterministic</span>
+      <span class="pill">EU Battery Regulation</span>
+    </div>
+
+    <p class="intro">
+      VITA-SOH provides a compliance-grade measurement and reporting instrument
+      for battery State-of-Health (SOH) and EU Digital Product Passport (DPP) generation.
+      The underlying VITA-SOH engine is designed for reproducibility, auditability,
+      and regulatory trust — not black-box automation.
+    </p>
+
+    <h2>What We Do</h2>
+    <p>
+      We help battery OEMs, recyclers, and operators generate EU-ready battery
+      passport data using a deterministic AI measurement engine combined with
+      explicit interpretation and compliance rules.
+    </p>
+
+    <h2>How It Works</h2>
+    <p>
+      Battery telemetry and test data are processed by a frozen, offline AI model.
+      Outputs are interpreted through rule-based logic, logged for audit traceability,
+      and mapped directly to EU Battery Digital Product Passport fields.
+    </p>
+
+    <h2>Pilot Program</h2>
+    <p>
+      We are currently running pilot programs with selected partners to validate
+      SOH interpretation, passport data generation, and audit procedures using
+      real production data.
+    </p>
+
+    <div class="cta">
+      <a href="mailto:contact@VITA-SOH.eu">Request Pilot</a>
+      <a href="mailto:contact@VITA-SOH.eu">Contact</a>
+    </div>
+
+    <footer>
+      © 2026 VITA-SOH · Compliance Infrastructure for Battery Transparency<br />
+      This system is a measurement and reporting instrument. No automated decisions are made.
+    </footer>
+  </main>
+
+  <script>
+    const toggle = document.getElementById("themeToggle");
+    const root = document.documentElement;
+
+    const storedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (storedTheme) {
+      root.setAttribute("data-theme", storedTheme);
+    } else if (prefersDark) {
+      root.setAttribute("data-theme", "dark");
+    }
+
+    updateButton();
+
+    toggle.addEventListener("click", () => {
+      const current = root.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+      updateButton();
+    });
+
+    function updateButton() {
+      const isDark = root.getAttribute("data-theme") === "dark";
+      toggle.textContent = isDark ? "☀️ Light" : "🌙 Dark";
+    }
+  </script>
+</body>
+</html>
+
